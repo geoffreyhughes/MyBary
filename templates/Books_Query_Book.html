@@ -1,0 +1,129 @@
+<!---
+   Geoffrey Hughes
+   002306123
+   ghughes@chapman.edu
+   Prof. Rene German
+   CPSC 408 - Database Management
+   Spring 2019
+   Final Project: MyBary
+   -->
+
+
+
+<table border = 1>
+
+
+        <tr>
+        <th> BookID</th>
+        <th> Author First Name</th>
+        <th> Author Last Name</th>
+        <th> Genre</th>
+        <th> Publisher</th>
+        <th> Title</th>
+        <th> Reading Status</th>
+        </tr>
+
+    {% for book in userDetails %}
+
+
+
+
+    <tr>
+
+        <td> {{ book[0] }} </td>
+        <td> {{ book[1] }} </td>
+        <td> {{ book[2] }} </td>
+        <td> {{ book[3] }} </td>
+        <td> {{ book[4] }} </td>
+        <td> {{ book[5] }} </td>
+        <td> {{ book[6] }} </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<form method="POST" action="">
+
+
+    Query By Author Last Name: <input type = "text" name = "query_lastName">
+    <input type = "submit" name = "submit_button" value = "Query by Author Last Name">
+    <br>
+
+    Query By Genre: <select name = "query_genre">
+        <option name = "action"> Action </option>
+        <option name = "children"> Children </option>
+        <option name = "drama"> Drama </option>
+        <option name = "fantasy"> Fantasy </option>
+        <option name = "horror"> Horror </option>
+        <option name = "humor"> Humor </option>
+        <option name = "sci-fi"> Sci-Fi </option>
+    </select>
+    <input type = "submit" name = "submit_button" value = "Query by Genre">
+
+
+
+
+    <br>
+
+
+    Query By Reading Status:
+    <select name = "query_readingStatus">
+        <option name = "unread"> Unread </option>
+        <option name = "reading"> Reading </option>
+        <option name = "read!"> Read! </option>
+    </select>
+    <input type = "submit" name = "submit_button" value = "Query by Reading Status">
+    <br>
+
+    Query Unread Books By Genre: <select name = "query_genre_in_unread">
+        <option name = "action"> Action </option>
+        <option name = "children"> Children </option>
+        <option name = "drama"> Drama </option>
+        <option name = "fantasy"> Fantasy </option>
+        <option name = "horror"> Horror </option>
+        <option name = "humor"> Humor </option>
+        <option name = "sci-fi"> Sci-Fi </option>
+    </select>
+    <input type = "submit" name = "submit_button" value = "Query Unread Books by Genre">
+
+    <br>
+    <br>
+
+
+
+
+
+
+
+    <input type = "submit" name = "submit_button" value = "View Books">
+</form>
+<br>
+
+<table border = 1>
+
+
+        <tr>
+        <th> Reading Status</th>
+        <th> Count</th>
+        </tr>
+
+    {% for readingStatus in queryDetails %}
+
+
+
+
+    <tr>
+
+        <td> {{ readingStatus[0] }} </td>
+        <td> {{ readingStatus[1] }} </td>
+
+
+    </tr>
+
+    {% endfor %}
+
+</table>

@@ -1,0 +1,62 @@
+<!---
+   Geoffrey Hughes
+   002306123
+   ghughes@chapman.edu
+   Prof. Rene German
+   CPSC 408 - Database Management
+   Spring 2019
+   Final Project: MyBary
+   -->
+
+
+
+<table border = 1>
+
+
+        <tr>
+        <th> BookID</th>
+        <th> Author First Name</th>
+        <th> Author Last Name</th>
+        <th> Genre</th>
+        <th> Publisher</th>
+        <th> Title</th>
+        <th> Reading Status</th>
+        </tr>
+
+    {% for book in userDetails %}
+
+
+
+
+    <tr>
+
+        <td> {{ book[0] }} </td>
+        <td> {{ book[1] }} </td>
+        <td> {{ book[2] }} </td>
+        <td> {{ book[3] }} </td>
+        <td> {{ book[4] }} </td>
+        <td> {{ book[5] }} </td>
+        <td> {{ book[6] }} </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<form method="POST" action="">
+
+
+    BookID to Delete: <input type = "text" name = "delete_book">
+
+
+
+
+<input type = "submit" name = "submit_button" value = "Delete Book">
+
+    <br>
+    <br>
+    <input type = "submit" name = "submit_button" value = "View Books">
+</form>

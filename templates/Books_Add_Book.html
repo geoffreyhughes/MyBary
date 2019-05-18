@@ -1,0 +1,87 @@
+<!---
+   Geoffrey Hughes
+   002306123
+   ghughes@chapman.edu
+   Prof. Rene German
+   CPSC 408 - Database Management
+   Spring 2019
+   Final Project: MyBary
+   -->
+
+
+
+<table border = 1>
+
+
+        <tr>
+        <th> BookID</th>
+        <th> Author First Name</th>
+        <th> Author Last Name</th>
+        <th> Genre</th>
+        <th> Publisher</th>
+        <th> Title</th>
+        <th> Reading Status</th>
+        </tr>
+
+    {% for book in userDetails %}
+
+
+
+
+    <tr>
+
+        <td> {{ book[0] }} </td>
+        <td> {{ book[1] }} </td>
+        <td> {{ book[2] }} </td>
+        <td> {{ book[3] }} </td>
+        <td> {{ book[4] }} </td>
+        <td> {{ book[5] }} </td>
+        <td> {{ book[6] }} </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<form method="POST" action="">
+
+
+    Author: First Name <input type = "text" name = "author_firstName">
+    Last Name <input type = "text" name = "author_lastName">
+    <br>
+    <br>
+    Genre <select name = "genre">
+        <option name = "action"> Action </option>
+        <option name = "children"> Children </option>
+        <option name = "drama"> Drama </option>
+        <option name = "fantasy"> Fantasy </option>
+        <option name = "horror"> Horror </option>
+        <option name = "humor"> Humor </option>
+        <option name = "sci-fi"> Sci-Fi </option>
+    </select>
+    Publisher <select name = "publisher">
+        <option name = "penguin_random_house"> Penguin Random House </option>
+        <option name = "scholastic"> Scholastic </option>
+        <option name = "wiley"> Wiley </option>
+        <option name = "other"> Other </option>
+    </select>
+    Title <input type = "text" name = "title">
+    <br>
+    <br>
+    Reading Status <select name = "readingStatus">
+        <option name = "unread"> Unread </option>
+        <option name = "reading"> Reading </option>
+        <option name = "read"> Read! </option>
+    </select>
+
+
+
+
+<input type = "submit" name = "submit_button" value = "Add Book">
+    <br>
+    <br>
+    <input type = "submit" name = "submit_button" value = "View Books">
+</form>

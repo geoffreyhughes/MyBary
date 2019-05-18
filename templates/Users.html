@@ -1,0 +1,33 @@
+<!---
+   Geoffrey Hughes
+   002306123
+   ghughes@chapman.edu
+   Prof. Rene German
+   CPSC 408 - Database Management
+   Spring 2019
+   Final Project: MyBary
+   -->
+
+
+
+<form method="POST" action="">
+<input type = "submit" name = "submit_button" value = "Books">
+</form>
+
+<table border = 1>
+    {% for user in userDetails %}
+
+    <tr>
+
+        <td> {{ user[0] }} </td>
+        <td> {{ user[1] }} </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+
